@@ -8,12 +8,12 @@ jobs:
     greetings:
         runs-on: ubuntu-latest
         steps:
-            -id:s01
-            #running some shell commands
-            run:echo "current time in git hub is $(date)"
-            #id:s01
+        -id:s01
+        #running some shell commands
+        run:echo "current time in git hub is $(date)"
+        -id:s01
              uses: mscoutermarsh/cowsays-action@master
-      with:
-        text:'moo moo moo'
-        color:green
+        with:
+            text:'moo moo moo'
+            color:green
 
