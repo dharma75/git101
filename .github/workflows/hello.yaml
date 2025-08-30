@@ -1,5 +1,5 @@
 #name
-name:hello_world
+name:hello
 #trigger
 on:
 -push
@@ -12,8 +12,10 @@ jobs:
         #running some shell commands
         run:echo "current time in git hub is $(date)"
         -id:s01
+        run:echo "CURR_DATE=$(date)">>$GITHUB_OUTPUT
+        -id:s02
              uses: mscoutermarsh/cowsays-action@master
         with:
-            text:'moo moo moo'
+            text:'moo moo moo!{{steps.s01.outputs.CURR_DATE}}'
             color:green
-
+        
