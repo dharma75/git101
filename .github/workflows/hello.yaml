@@ -1,21 +1,21 @@
 #name
-name:hello
+name: hello
 #trigger
 on:
--push
+- push
 #jobs
 jobs:
     greetings:
         runs-on: ubuntu-latest
         steps:
-        -id:s01
+        - id: s00
         #running some shell commands
-        run:echo "current time in git hub is $(date)"
-        -id:s01
-        run:echo "CURR_DATE=$(date)">>$GITHUB_OUTPUT
-        -id:s02
-             uses: mscoutermarsh/cowsays-action@master
-        with:
-            text:'moo moo moo!{{steps.s01.outputs.CURR_DATE}}'
-            color:green
+          run: echo "current time in git hub is $(date)"
+        - id: s01
+          run: echo "CURR_DATE=$(date)">>$GITHUB_OUTPUT
+        - id: s02
+          uses: mscoutermarsh/cowsays-action@master
+          with:
+            text: 'moo moo moo!{{steps.s01.outputs.CURR_DATE}}'
+            color: green
         
