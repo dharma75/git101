@@ -16,6 +16,6 @@ jobs:
         - id: s02
           uses: mscoutermarsh/cowsays-action@master
           with:
-            text: 'moo moo moo!{{steps.s01.outputs.CURR_DATE}}'
+            text: 'moo moo moo!{{steps.s01.outputs.CURR_DATE}},${{github.ref}},${{github.repository}}'
             color: green
         
