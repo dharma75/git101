@@ -1,0 +1,14 @@
+#name
+name:hello_world
+#trigger
+on:
+-push
+#jobs
+jobs:
+    greetings:
+        runs-on: ubuntu-latest
+        steps:
+            -id:s01
+            #running some shell commands
+            run:echo "current time in git hub is $(date)"
+
