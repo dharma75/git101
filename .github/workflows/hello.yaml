@@ -10,9 +10,9 @@ jobs:
         steps:
         - id: s00
         #running some shell commands
-          run: echo "current time in git hub is $(date)"
+          run: echo 'current time in git hub is $(date)'
         - id: s01
-          run: echo "CURR_DATE=$(date)">>$GITHUB_OUTPUT
+          run: echo 'CURR_DATE=$(date)'>>$GITHUB_OUTPUT
         - id: s02
           uses: mscoutermarsh/cowsays-action@master
           with:
